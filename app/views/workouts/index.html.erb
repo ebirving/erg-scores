@@ -1,0 +1,9 @@
+<h2>All Workouts</h2>
+<div>
+  <% @workouts.each do |workout| %>
+  <p><%= workout.description %></p>
+  <p>Type: <%= workout.intensity %></p>
+  <p>Training Band: <%= workout.training_band %></p>
+  <%= link_to "Scores", workout_scores_path(workout.id) %>
+  <% end %>
+</div>

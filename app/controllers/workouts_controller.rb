@@ -1,6 +1,7 @@
 class WorkoutsController < ApplicationController
   def index #Show all workouts
     # GET /workouts
+    @workouts = Workout.all
   end
 
   def show #Show all scores for this workout
