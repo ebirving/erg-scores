@@ -1,4 +1,3 @@
 class Rower < ActiveRecord::Base
-  has_many :scores
-  has_many :workouts, through: :scores
+  has_many :workouts, dependent: :destroy
 end

@@ -1,4 +1,4 @@
 class Workout < ActiveRecord::Base
-  has_many :intervals
-  has_many :scores, through :intervals
+  belongs_to :rower
+  has_many :scores, dependent: :destroy
 end
