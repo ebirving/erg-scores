@@ -6,6 +6,9 @@ class WorkoutsController < ApplicationController
 
   def show #Show all scores for this workout
     # GET /workouts/:id
+    @workout = Workout.find(params[:id])
+    @scores = Score.where(workout_id: @workout.id)
+    @rowers = Rower.all
   end
 
   def new #Eventually coaches only

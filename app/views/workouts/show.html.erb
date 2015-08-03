@@ -1,0 +1,21 @@
+<h2>Workout Data</h2>
+
+<h3>Specs:</h3>
+<p><%= @workout.description %></p>
+<p>Type: <%= @workout.intensity %></p>
+<p>Training Band: <%= @workout.training_band %></p>
+
+  <h3>Scores:</h3>
+  <div>
+  <% @rowers.each do |rower| %>
+    <% rower.scores.each do |score|%>
+      <% if score.workout_id == @workout.id %>
+      <p>Interval: <%= score.interval_number %></p>
+      <p>Time: <%= score.minutes %>:<%= score.seconds %></p>
+      <p>Distance: <%= score.distance %>m</p>
+      <p>500m Split: <%= score.split %></p>
+      <p>SPM: <%= score.spm %></p>
+      <% end %>
+    <% end %>
+  <% end %>
+  </div>
