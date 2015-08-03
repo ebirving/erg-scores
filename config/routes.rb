@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
-  resources :workouts, shallow: true do
-    resources :scores
-    resources :rowers
+  resources :rowers do
+    resources :scores, shallow: true
+  end
+
+  resources :workouts do
+    resources :scores, shallow: true
   end
 
   # Example of regular route:
