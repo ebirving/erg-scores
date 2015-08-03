@@ -5,10 +5,11 @@
 - [ ] As a user, I want to submit my scores for each workout.
 - [ ] As a user, I want to view all of my scores so I can track my progress over time.
 - [ ] As a user, I want to view all users' scores for a given workout so I can see how I stack up.
-- [ ] As a user, I want to edit my workouts and scores.
-- [ ] As a user, I want to delete my workouts and scores.
+- [ ] As a user, I want to edit my workouts and scores so I can eliminate errors.
+- [ ] As a user, I want to delete my workouts and scores so I can eliminate errors.
 
 - [ ] Stretch goal: As a rower, I want to filter scores by various criteria, including gender, weight class, age range, club/team, program, and crew.
 - [ ] Stretch goal: As a rower, I want to be prevented from deleting/editing workouts if score have already been submitted.
 - [ ] Stretch goal: As a coach, I want to limit others' ability to edit/delete workouts.
 - [ ] Stretch goal: As a coach, I want to be able to delete any workout or score.
+- [ ] Stretch goal: As a coach, I want to assign workouts to my rowers via email.
