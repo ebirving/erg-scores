@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803175320) do
+ActiveRecord::Schema.define(version: 20150803182319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,14 +36,14 @@ ActiveRecord::Schema.define(version: 20150803175320) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "workout_id"
+    t.integer  "rower_id"
   end
 
   add_index "scores", ["workout_id"], name: "index_scores_on_workout_id", using: :btree
 
   create_table "workouts", force: :cascade do |t|
-    t.string  "training_band"
-    t.text    "description"
-    t.integer "rower_id"
+    t.string "training_band"
+    t.text   "description"
   end
 
   add_foreign_key "scores", "workouts"
