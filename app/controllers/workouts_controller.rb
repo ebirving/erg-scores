@@ -13,22 +13,41 @@ class WorkoutsController < ApplicationController
 
   def new #Eventually coaches only
     # GET /workout/new
+    @workout = Workout.new
+    @training_bands = 'UT2', 'UT1', 'AT', 'TR', 'AN'
+    @workout_types = 'Active Recovery', 'Training', 'Taper', 'Benchmark'
   end
 
   def create
-    # POST /rowers
+    # POST /workouts
+    @workout = Workout.create(workout_params)
+    redirect_to workout_path(@workout)
   end
 
   def edit #Creator only, and only if empty
-    # GET /rowers/:id/edit
+    # GET /workouts/:id/edit
+    @workout = Workout.find(params[:id])
+    @training_bands = 'UT2', 'UT1', 'AT', 'TR', 'AN'
+    @workout_types = 'Active Recovery', 'Training', 'Taper', 'Benchmark'
   end
 
   def update
-    # PUT /rowers/:id
-    # PATCH /rowers/:id
+    # PUT /workouts/:id
+    # PATCH /workouts/:id
+    @workout = Workout.find(params[:id])
+    @workout.update(workout_params)
+    redirect_to workout_path(@workout)
   end
 
   def destroy #Creator only, and only if empty
-    # DELETE /rowers/:id
+    # DELETE /workouts/:id
+    @workout = Workout.find(params[:id])
+    @workout.destroy
+    redirect_to root_path
+  end
+
+  private
+  def workout_params
+      params.require(:workout).permit(:description, :intensity, :training_band)
   end
 end

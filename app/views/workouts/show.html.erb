@@ -19,3 +19,12 @@
     <% end %>
   <% end %>
   </div>
+
+<!-- Render coaches toolbar? -->
+  <button><%= link_to "Edit This Workout", edit_workout_path, style: "text-decoration: none" %>
+  </button>
+  <div>
+      <%= simple_form_for @workout, method: :delete do |f| %>
+        <%= f.submit "Delete This Workout", class: "delete" %>
+      <% end %>
+  </div>

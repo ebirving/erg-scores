@@ -1,4 +1,7 @@
 <h2>All Workouts</h2>
+
+<!-- Partial here? Latest benchmark, charted -->
+<!-- Filtering options or search here? -->
 <div>
   <% @workouts.each do |workout| %>
   <p><%= workout.description %></p>
@@ -6,4 +9,9 @@
   <p>Training Band: <%= workout.training_band %></p>
   <%= link_to "Scores", workout_path(workout.id) %>
   <% end %>
+</div>
+
+<!-- Create a coaches toolbar partial that appears at the bottom of the body or in the footer or at the side(?) if the person logging in is a coach. Move create/delete/edit workout options to that panel -->
+<div>
+  <%= link_to "Create a New Workout", new_workout_path %>
 </div>
