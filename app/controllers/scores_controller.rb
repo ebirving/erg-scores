@@ -1,6 +1,8 @@
 class ScoresController < ApplicationController
   def index #View my scores -- combine w/ rower#show?
     # GET /rowers/:rower_id/scores
+    @rower = Rower.find(params[:rower_id])
+    @scores = @rower.scores
   end
 
   def new
@@ -15,14 +17,28 @@ class ScoresController < ApplicationController
 
   def edit #Edit from rower#show slash score#index view
     # GET /scores/:id/edit
+    @score = Score.find(params[:id])
   end
 
   def update
     # PATCH /scores/:id
     # PUT /scores/:id
+    @score = Score.find(params[:id])
+    @score.update(score_params)
+    @rower_id = @score.rower_id
+    redirect_to rower_scores_path(@rower_id)
   end
 
   def destroy #Delete from rower#show slash score#index view
     # DELETE /scores/:id
+    @score = Score.find(params[:id])
+    @rower_id = @score.rower_id
+    @score.destroy
+    redirect_to rower_scores_path(@rower_id)
+  end
+
+  private
+  def score_params
+    params.require(:score).permit(:interval_number, :minutes, :seconds, :distance, :split, :spm, :created_at, :updated_at, :workout_id, :rower_id)
   end
 end
