@@ -1,0 +1,12 @@
+<h2>My Profile</h2>
+
+<p>Name: <%= @rower.name %></p>
+<p>Gender: <%= @rower.gender %></p>
+<p>Weight Class: <%= @rower.weight_class %></p>
+<p>Birthday: <%= @rower.birthday.strftime("%B %e, %Y") %></p>
+<p>Age Group: <%= @rower.age_group %></p>
+
+<button><%= link_to "Profile Settings", edit_rower_path, style: "text-decoration: none" %>
+</button>
+
+<!-- Render coaches toolbar? -->

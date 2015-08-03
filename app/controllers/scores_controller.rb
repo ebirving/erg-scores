@@ -1,7 +1,6 @@
 class ScoresController < ApplicationController
   def index #View my scores -- combine w/ rower#show?
     # GET /rowers/:rower_id/scores
-    # /workouts/:workout_id/scores
   end
 
   def new

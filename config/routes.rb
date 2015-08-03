@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'workouts#index'
+  root 'scores#index'
 
   # Example resource route with sub-resources:
   #   resources :products do

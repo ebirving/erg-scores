@@ -1,10 +1,12 @@
 class WorkoutsController < ApplicationController
-  def index #Show all workouts
+  def index
+    #Show all workouts
     # GET /workouts
     @workouts = Workout.all
   end
 
-  def show #Show all scores for this workout
+  def show
+    #Show all scores for this workout
     # GET /workouts/:id
     @workout = Workout.find(params[:id])
     @scores = Score.where(workout_id: @workout.id)
@@ -43,7 +45,7 @@ class WorkoutsController < ApplicationController
     # DELETE /workouts/:id
     @workout = Workout.find(params[:id])
     @workout.destroy
-    redirect_to root_path
+    redirect_to workouts_path
   end
 
   private
