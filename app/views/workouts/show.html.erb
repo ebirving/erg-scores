@@ -13,12 +13,15 @@
       <p>Interval: <%= score.interval_number %></p>
       <p>Time: <%= score.minutes %>:<%= score.seconds %></p>
       <p>Distance: <%= score.distance %>m</p>
-      <p>500m Split: <%= score.split %></p>
+      <p>500m Split: <%= score.split %>/500m</p>
       <p>SPM: <%= score.spm %></p>
       <% end %>
     <% end %>
   <% end %>
   </div>
+
+  <button><%= link_to "Submit A Score For This Workout", new_workout_score_path(@workout.id), style: "text-decoration: none" %>
+  </button>
 
 <!-- Render coaches toolbar? -->
   <button><%= link_to "Edit This Workout", edit_workout_path, style: "text-decoration: none" %>

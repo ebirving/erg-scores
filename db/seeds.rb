@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Workout.create(training_band: 'UT2', description:'2 x 25 minutes, 60% pressure', intensity: 'recovery')
-Workout.create(training_band: 'UT1', description:'3 x 10 minutes', intensity: 'training')
-Workout.create(training_band: 'AT', description:'2k piece', intensity: 'benchmark')
+Workout.create(name: 'Long piece', training_band: 'UT2', description:'2 x 25 minutes, 60% pressure', intensity: 'recovery')
+Workout.create(name: 'Aerobic hell', training_band: 'UT1', description:'3 x 10 minutes', intensity: 'training')
+Workout.create(name: '2k', training_band: 'AT', description:'2k piece', intensity: 'benchmark')
+
+Rower.create(name: 'Erica')
+Rower.create(name: 'Idgie')

@@ -1,9 +1,12 @@
-<%= simple_form_for @score do |f| %>
+<%= simple_form_for [@rower || @workout, @score] do |f| %>
   <%= f.input :interval_number %>
   <%= f.input :minutes %>
   <%= f.input :seconds %>
   <%= f.input :distance, label: 'Distance in Meters' %>
   <%= f.input :split %>
   <%= f.input :spm %>
+  <%= f.input :rower_id %>
+  <%= f.input :workout_id %>
   <%= f.button :submit %>
 <% end %>
+<!-- ADD AUTHENTICATION TO THIS BEYOTCH AND AUTOMATICALLY POPULATE WORKOUT AND ROWER-->

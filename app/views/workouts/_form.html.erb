@@ -1,4 +1,5 @@
 <%= simple_form_for @workout do |f| %>
+  <%= f.input :name, label: "Give this workout a name" %>
   <%= f.input :description %>
   <%= f.input :intensity, label: "Type", collection: @workout_types, as: :select %>
   <%= f.input :training_band, collection: @training_bands, as: :select%>

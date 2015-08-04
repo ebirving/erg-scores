@@ -11,6 +11,7 @@ class WorkoutsController < ApplicationController
     @workout = Workout.find(params[:id])
     @scores = Score.where(workout_id: @workout.id)
     @rowers = Rower.all
+    @score = Score.new
   end
 
   def new #Eventually coaches only
@@ -50,6 +51,6 @@ class WorkoutsController < ApplicationController
 
   private
   def workout_params
-      params.require(:workout).permit(:description, :intensity, :training_band)
+      params.require(:workout).permit(:name, :description, :intensity, :training_band)
   end
 end
