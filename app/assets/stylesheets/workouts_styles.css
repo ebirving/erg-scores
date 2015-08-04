@@ -1,0 +1,33 @@
+
+#workout_index {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#workout_details {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+.spec {
+  display: block;
+}
+
+.spec_summary {
+  font-style: italic;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.workout_specs, .score_summary {
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  box-shadow: 1px 1px 5px #21252B;
+  margin: .5em .5em 1.5em .5em;
+  padding: .5em;
+}
+
+.workout_specs h4 {
+  margin: 0
+}

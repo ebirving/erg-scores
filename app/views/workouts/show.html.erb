@@ -1,33 +1,31 @@
-<h2>Workout Data</h2>
+<div class="container" id="workout_details">
 
-<h3>Specs:</h3>
-<p><%= @workout.description %></p>
-<p>Type: <%= @workout.intensity %></p>
-<p>Training Band: <%= @workout.training_band %></p>
+  <div class='page_title'>
+    <h2><%= @workout.name %></h2>
+  </div>
 
-  <h3>Scores:</h3>
-  <div>
+  <p class='spec_summary wide'><%= @workout.description %><br><%= @workout.intensity %> <%= @workout.training_band %></p>
+
   <% @rowers.each do |rower| %>
-    <% rower.scores.each do |score|%>
-      <% if score.workout_id == @workout.id %>
-      <p>Interval: <%= score.interval_number %></p>
-      <p>Time: <%= score.minutes %>:<%= score.seconds %></p>
-      <p>Distance: <%= score.distance %>m</p>
-      <p>500m Split: <%= score.split %>/500m</p>
-      <p>SPM: <%= score.spm %></p>
+    <div class="score_summary">
+      <% rower.scores.each do |score|%>
+        <% if score.workout_id == @workout.id %>
+        <span class="spec">Interval: <%= score.interval_number %></span>
+        <span class="spec">Time: <%= score.minutes %>:<%= score.seconds %></span>
+        <span class="spec">Distance: <%= score.distance %>m</span>
+        <span class="spec">500m Split: <%= score.split %>/500m</span>
+        <span class="spec">SPM: <%= score.spm %></span>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   <% end %>
-  </div>
 
-  <button><%= link_to "Submit A Score For This Workout", new_workout_score_path(@workout.id) %>
-  </button>
-
-<!-- Render coaches toolbar? -->
-  <button><%= link_to "Edit This Workout", edit_workout_path %>
-  </button>
-  <div>
-      <%= simple_form_for @workout, method: :delete do |f| %>
-        <%= f.submit "Delete This Workout", class: "delete" %>
-      <% end %>
+  <div class='wide'>
+    <%= link_to "Submit A Score For This Workout", new_workout_score_path(@workout.id), class: 'button new' %>
+  <!-- Render coaches toolbar? -->
+    <%= link_to "Edit This Workout", edit_workout_path, class: 'button edit' %>
+    <%= simple_form_for @workout, method: :delete do |f| %>
+      <%= f.submit "Delete This Workout", class: "button", style: "background-color: #c00"%>
+    <% end %>
   </div>
+</div>

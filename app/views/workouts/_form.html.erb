@@ -3,5 +3,5 @@
   <%= f.input :description %>
   <%= f.input :intensity, label: "Type", collection: @workout_types, as: :select %>
   <%= f.input :training_band, collection: @training_bands, as: :select%>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: 'button' %>
 <% end %>

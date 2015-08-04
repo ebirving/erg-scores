@@ -13,7 +13,111 @@
  *= require_tree .
  *= require_self
  */
-button, a {
-  color: black;
-  text-decoration: none;
+
+ * {
+   box-sizing: border-box;
+ }
+
+  h1 {
+    font-weight: bold;
+  }
+
+  h2,
+  h3 {
+    line-height: 1.2;
+    font-weight: bolder;
+  }
+
+  body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.6;
+    font-size: 18px;
+    color: #444;
+    padding: 0 10px;
+    background-color: #21252B;
+  }
+
+.button {
+	display: block;
+  font-size: 18px;
+	line-height: 1;
+	padding: 7px 10px;
+  text-align: center;
+	text-decoration: none;
+	color: #fff;
+	background-color: #39c;
+	border-radius: 7px;
+  margin: .5em auto;
 }
+
+input.button, button.button {
+	border: 0px none;
+}
+
+.container {
+  margin: 3em auto;
+  max-width: 800px;
+  background-color: white;
+  padding: 1em;
+  display: flex;
+}
+
+.item {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+.page_title {
+  text-align: center;
+  width: 100%;
+}
+
+.page_title h2 {
+  margin-bottom: 0;
+}
+
+.new {
+  background-color: #42b078;
+  margin: 0 auto;
+  max-width: 50%;
+}
+
+.delete {
+  background-color: #c00;
+  max-width: 50%;
+}
+
+.edit {
+  max-width: 50%;
+}
+
+.wide {
+  width: 100%
+}
+
+#nav li {
+  display: inline;
+	float: left; }
+
+#nav li a {
+	display: block;
+	padding: 8px 15px;
+	text-decoration: none;
+  font-weight: lighter;
+	color: white;}
+
+#nav li a:hover {
+  color: #c00; }
+
+#nav {
+	width: 100%;
+	float: left;
+	margin: 0 0 2em 0;
+	padding: 0;
+	list-style: none;
+	background-color: #2C4F8E;
+  position: absolute;
+  top: 0;
+  left: 0 }
