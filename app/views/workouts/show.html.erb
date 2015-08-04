@@ -20,11 +20,11 @@
   <% end %>
   </div>
 
-  <button><%= link_to "Submit A Score For This Workout", new_workout_score_path(@workout.id), style: "text-decoration: none" %>
+  <button><%= link_to "Submit A Score For This Workout", new_workout_score_path(@workout.id) %>
   </button>
 
 <!-- Render coaches toolbar? -->
-  <button><%= link_to "Edit This Workout", edit_workout_path, style: "text-decoration: none" %>
+  <button><%= link_to "Edit This Workout", edit_workout_path %>
   </button>
   <div>
       <%= simple_form_for @workout, method: :delete do |f| %>

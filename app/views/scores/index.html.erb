@@ -2,7 +2,7 @@
   <%= @rower.name %>'s Dashboard
 </p>
 
-<button><%= link_to "Submit New Score", new_rower_score_path(@rower), style: "text-decoration: none" %></button>
+<button><%= link_to "Submit New Score", new_rower_score_path(@rower) %></button>
 
 <div>
 <% @scores.each do |score| %>
@@ -13,7 +13,7 @@
   <p>Distance: <%= score.distance %>m</p>
   <p>500m Split: <%= score.split %>/500m</p>
   <p>SPM: <%= score.spm %></p>
-  <button><%= link_to "Edit Score", edit_score_path(score), style: "text-decoration: none" %></button>
+  <button><%= link_to "Edit Score", edit_score_path(score) %></button>
   <button><%=link_to "See All Scores for this Workout", workout_path(score.workout_id)%></button>
   <% end %>
 </div>
