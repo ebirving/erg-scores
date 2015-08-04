@@ -1,13 +1,10 @@
-<div class="container" id="workout_details">
+<div class="container">
 
-  <div class='page_title'>
-    <h2><%= @workout.name %></h2>
-  </div>
-
-  <p class='spec_summary wide'><%= @workout.description %><br><%= @workout.intensity %> <%= @workout.training_band %></p>
+  <div class='title card'>
+  <%= @workout.name %><br><%= @workout.description %><br><%= @workout.intensity %><br><%= @workout.training_band %></div>
 
   <% @rowers.each do |rower| %>
-    <div class="score_summary">
+    <div class="score_summary card">
       <% rower.scores.each do |score|%>
         <% if score.workout_id == @workout.id %>
         <span class="spec">Interval: <%= score.interval_number %></span>
@@ -22,10 +19,13 @@
 
   <div class='wide'>
     <%= link_to "Submit A Score For This Workout", new_workout_score_path(@workout.id), class: 'button new' %>
-  <!-- Render coaches toolbar? -->
-    <%= link_to "Edit This Workout", edit_workout_path, class: 'button edit' %>
-    <%= simple_form_for @workout, method: :delete do |f| %>
-      <%= f.submit "Delete This Workout", class: "button", style: "background-color: #c00"%>
-    <% end %>
   </div>
+</div>
+
+<div class='wide'>
+<!-- Render coaches toolbar? -->
+  <%= link_to "Edit This Workout", edit_workout_path, class: 'button edit' %>
+  <%= simple_form_for @workout, method: :delete do |f| %>
+    <%= f.submit "Delete This Workout", class: "button", style: "background-color: #c00"%>
+  <% end %>
 </div>

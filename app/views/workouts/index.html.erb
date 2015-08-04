@@ -1,13 +1,11 @@
-<div class="container" id="workout_index">
-
-  <div class="page_title">
-    <h2>All Workouts</h2>
-  </div>
-
+<div class="container">
   <!-- Partial here? Latest benchmark, charted -->
   <!-- Filtering options or search here? -->
+  <div class="title card">
+    All Workouts
+  </div>
   <% @workouts.each do |workout| %>
-    <div class="workout_specs item">
+    <div class="workout_specs card">
       <h4><%= workout.name%></h4>
       <!-- <ul> -->
         <span class='spec'><em><%= workout.description %></em></span>
@@ -18,7 +16,8 @@
     </div>
   <% end %>
   <!-- Create a coaches toolbar partial that appears at the bottom of the body or in the footer or at the side(?) if the person logging in is a coach. Move create/delete/edit workout options, view all rowers to that panel -->
+  </div>
+  
   <div class="wide">
     <%= link_to "Create a New Workout", new_workout_path, class: 'button new'%>
   </div>
-</div>

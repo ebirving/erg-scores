@@ -18,26 +18,30 @@
    box-sizing: border-box;
  }
 
-  h1 {
-    font-weight: bold;
-  }
+h1 {
+  font-weight: bold;
+}
 
-  h2,
-  h3 {
-    line-height: 1.2;
-    font-weight: bolder;
-  }
+h2,
+h3 {
+  line-height: 1.2;
+  font-weight: bolder;
+}
 
-  body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 1.6;
-    font-size: 18px;
-    color: #444;
-    padding: 0 10px;
-    background-color: #21252B;
-  }
+.spacer {
+  height: 2em;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.6;
+  font-size: 18px;
+  color: #444;
+  padding: 0 10px;
+  background-color: #21252B;
+}
 
 .button {
 	display: block;
@@ -59,23 +63,28 @@ input.button, button.button {
 .container {
   margin: 3em auto;
   max-width: 800px;
-  background-color: white;
   padding: 1em;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: white;
 }
 
-.item {
-  flex-grow: 1;
+.card {
+  box-shadow: 1px 1px 5px #21252B;
+  margin: .5em .5em 1.5em .5em;
+  padding: .5em;
+  background-color: white;
+}
+
+.title {
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 24px;
   flex-shrink: 1;
-}
-
-.page_title {
+  box-shadow: none;
+  border: none;
   text-align: center;
-  width: 100%;
-}
-
-.page_title h2 {
-  margin-bottom: 0;
 }
 
 .new {
@@ -113,7 +122,6 @@ input.button, button.button {
 
 #nav {
 	width: 100%;
-	float: left;
 	margin: 0 0 2em 0;
 	padding: 0;
 	list-style: none;
