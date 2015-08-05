@@ -1,14 +1,17 @@
+<div class="container">
 <%= simple_form_for @rower do |f| %>
+  <div class="card">
   <%= f.input :name %>
   <%= f.input :gender, collection: @genders, as: :select %>
   <%= f.input :weight_class, collection: @weight_classes, as: :select %>
   <%= f.input :birthday, as: :date, start_year: Date.today.year - 90, order: [:month, :day, :year] %>
   <%= f.input :age_group, collection: @age_groups, as: :select %>
-  <%= f.button :submit class: 'button' %>
+  <%= f.button :submit, class: 'button', value: 'Update Profile' %>
 <% end %>
-
+  </div>
+</div>
 <div>
     <%= simple_form_for @rower, method: :delete do |f| %>
-      <%= f.submit "Delete Profile", class: 'button' %>
+      <%= f.submit "Delete Profile", class: 'button', style: 'background-color: #c00'%>
     <% end %>
 </div>

@@ -11,8 +11,8 @@
 <ul id="nav">
 	<li><strong><%= link_to "HOME", root_path %></strong></li>
 	<li><%= link_to "Workouts", workouts_path %></li>
-	<li><%= link_to "Dashboard", root_path %></li>
-	<li><%= link_to "Profile Settings", root_path %></li>
+	<li><%= link_to "Dashboard", rower_scores_path(1) %></li>
+	<li><%= link_to "Profile Settings", edit_rower_path(1) %></li>
   <li><%= link_to "Sign in", root_path %></li>
   <li><%= link_to "Sign up", root_path %></li>
   <li><%= link_to "Sign out", root_path %></li>
