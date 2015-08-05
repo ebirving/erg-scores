@@ -1,0 +1,72 @@
+/* ----- SimpleForm Styles ----- */
+.simple_form {
+  min-width: 50%
+}
+.simple_form div.input {
+  margin: 1em;
+  display: block;
+}
+
+input[type="text"] {
+  font-size: 14px;
+}
+
+input, textarea {
+  width: 100%;
+  background: #F5F5F5;
+  border: none;
+  padding: .5em;
+}
+
+textarea {
+  height: 100px;
+  font-size: 14px;
+}
+
+.simple_form label {
+  display: block;
+}
+
+div.boolean label, label.collection_radio_buttons {
+
+}
+
+label.collection_radio_buttons {
+
+}
+
+.field_with_errors {
+  background-color: #ff3333;
+}
+
+.simple_form .error {
+  clear: left;
+  color: black;
+  display: block;
+  margin-left: 120px;
+}
+
+.simple_form .hint {
+  clear: left;
+  margin-left: 120px;
+  color: #555;
+  display: block;
+  font-style: italic;
+}
+
+input.radio {
+  margin-right: 5px;
+  vertical-align: -3px;
+}
+
+input.check_boxes {
+  margin-left: 3px;
+  vertical-align: -3px;
+}
+
+label.collection_check_boxes {
+  float: none;
+  margin: 0;
+  vertical-align: -2px;
+  margin-left: 2px;
+}

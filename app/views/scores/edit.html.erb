@@ -1,6 +1,9 @@
-<<%= render partial: "form" %>
+<div class="container">
+  <div class='title card'><h3>Edit Score</h3></div>
+  <%= render partial: "form" %>
+</div>
 <div>
     <%= simple_form_for @score, method: :delete do |f| %>
-      <%= f.submit "Delete This Score", class: "button" %>
+      <%= f.submit "Delete This Score", class: "button", style: "background-color: #c00" %>
     <% end %>
 </div>
