@@ -10,6 +10,7 @@ class CreateScores < ActiveRecord::Migration
       t.datetime :created_at
       t.datetime :updated_at
       t.references :workout, index: true, foreign_key: true
+      t.references :profile, index: true, foreign_key: true
     end
   end
 end

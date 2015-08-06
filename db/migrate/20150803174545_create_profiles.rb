@@ -1,13 +1,16 @@
 class CreateProfiles < ActiveRecord::Migration
   def change
     create_table :profiles do |t|
-      t.string :email
-      t.string :password_digest
-      t.string :name
-      t.string :gender
-      t.string :weight_class
-      t.date :birthday
-      t.string :age_group
+      t.string  :first_name
+      t.string  :gender
+      t.string  :weight_class
+      t.date    :birthday
+      t.string  :age_group
+      t.string  :last_name
+      t.string  :club
+      t.string  :program
+      t.string  :role
+      t.references :user, index: true, foreign_key: true
     end
   end
 end
