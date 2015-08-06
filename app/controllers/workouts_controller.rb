@@ -30,7 +30,6 @@ class WorkoutsController < ApplicationController
   def edit #Creator only, and only if empty
     # GET /workouts/:id/edit
     @workout = Workout.find(params[:id])
-    @training_bands = 'UT2', 'UT1', 'AT', 'TR', 'AN'
     @workout_types = 'Active Recovery', 'Training', 'Taper', 'Benchmark'
   end
 
@@ -51,6 +50,6 @@ class WorkoutsController < ApplicationController
 
   private
   def workout_params
-      params.require(:workout).permit(:name, :description, :intensity, :training_band)
+      params.require(:workout).permit(:name, :description, :intensity)
   end
 end

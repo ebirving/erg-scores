@@ -2,8 +2,7 @@
   <div class="card">
     <%= f.input :name, label: "Workout Name:" %>
     <%= f.input :description, label: "Description:" %>
-    <%= f.input :intensity, label: "Type:", collection: @workout_types, as: :select %>
-    <%= f.input :training_band, label: "Training Band:", collection: @training_bands, as: :select%>
+    <%= f.input :intensity, label: "Type" collection: @workout_types, as: :select %>
   </div>
   <div class="wide">
     <%= f.button :submit, class: 'button' %>

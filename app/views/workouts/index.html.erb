@@ -10,14 +10,13 @@
       <!-- <ul> -->
         <span class='spec'><em><%= workout.description %></em></span>
         <span class='spec'>Type: <%= workout.intensity %></span>
-        <span class='spec'>Training Band: <%= workout.training_band %></span>
       <!-- </ul> -->
       <%= link_to "Stats & Scores", workout_path(workout.id), class: 'button stats_and_scores'%>
     </div>
   <% end %>
   <!-- Create a coaches toolbar partial that appears at the bottom of the body or in the footer or at the side(?) if the person logging in is a coach. Move create/delete/edit workout options, view all profiles to that panel -->
   </div>
-  
+
   <div class="wide">
     <%= link_to "Create a New Workout", new_workout_path, class: 'button new'%>
   </div>
