@@ -62,11 +62,10 @@ input.button, button.button {
 
 .container {
   margin: 3em auto;
-  max-width: 800px;
+  max-width: 640px;
   padding: 1em;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
   background-color: white;
 }
 

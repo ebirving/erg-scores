@@ -41,6 +41,6 @@ class RowersController < ApplicationController
 
   private
   def rower_params
-    params.require(:rower).permit(:name, :gender, :weight_class, :birthday, :age_group)
+    params.require(:rower).permit(:first_name,:last_name, :club, :program, :gender, :weight_class, :birthday, :age_group)
   end
 end

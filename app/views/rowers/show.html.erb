@@ -3,7 +3,9 @@
   <div class="title card">My Profile</div>
 
   <div class="card">
-    <span class="spec"> Name: <%= @rower.name %></span>
+    <span class="spec"> Name: <%= @rower.first_name %> <%= @rower.last_name %></span>
+    <span class="spec">Club: <%= @rower.club %></span>
+    <span class="spec">Program: <%= @rower.program %></span>
     <span class="spec"> Gender: <%= @rower.gender %></span>
     <span class="spec"> Weight Class: <%= @rower.weight_class %></span>
     <span class="spec"> Birthday: <%= @rower.birthday.strftime("%B %e, %Y") %></span>
