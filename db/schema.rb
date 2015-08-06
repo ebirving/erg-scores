@@ -11,21 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806155834) do
+ActiveRecord::Schema.define(version: 20150806162752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "profiles", force: :cascade do |t|
-    t.string "first_name"
-    t.string "gender"
-    t.string "weight_class"
-    t.date   "birthday"
-    t.string "age_group"
-    t.string "last_name"
-    t.string "club"
-    t.string "program"
-    t.string "role"
+    t.string  "first_name"
+    t.string  "gender"
+    t.string  "weight_class"
+    t.date    "birthday"
+    t.string  "age_group"
+    t.string  "last_name"
+    t.string  "club"
+    t.string  "program"
+    t.string  "role"
+    t.integer "user_id"
   end
 
   create_table "scores", force: :cascade do |t|
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150806155834) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "profile_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -68,5 +70,7 @@ ActiveRecord::Schema.define(version: 20150806155834) do
     t.string "name"
   end
 
+  add_foreign_key "profiles", "users"
   add_foreign_key "scores", "workouts"
+  add_foreign_key "users", "profiles"
 end
