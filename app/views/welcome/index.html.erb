@@ -5,7 +5,7 @@
       <%= image_tag 'womens_four.jpg' %>
       <figcaption>
         <h2>Submit a <span>New Score</span></h2>
-        <%= link_to "View More", root_path %>
+        <%= link_to "View More", new_profile_score_path(current_user.profile.id) %>
       </figcaption>
     </figure>
   </div>
@@ -15,7 +15,7 @@
       <%= image_tag 'dawn_row.jpg' %>
       <figcaption>
         <h2>View Your <span>Dashboard</span></h2>
-        <%= link_to "View More", root_path %>
+        <%= link_to "View More", profile_scores_path(current_user.profile.id) %>
       </figcaption>
     </figure>
   </div>
