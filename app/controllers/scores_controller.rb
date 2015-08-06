@@ -8,23 +8,23 @@ class ScoresController < ApplicationController
   def new
     # GET /profiles/:profile_id/scores/new
     # /workouts/:workout_id/scores/new
-    if params.include? (:profile_id)
-      @profile = Profile.find(params[:profile_id])
-    elsif params.include? (:workout_id)
+    @profile = current_user.profile
+
+    if params.include? (:workout_id)
       @workout = Workout.find(params[:workout_id])
     end
+
     @score = Score.new
+
+    @workouts = Workout.all
+
   end
 
   def create
     # POST /profiles/:profile_id/scores
     # /workouts/:workout_id/scores
     @score = Score.create(score_params)
-    if params.include? (:profile_id)
-      redirect_to profile_scores_path
-    elsif params.include? (:workout_id)
-      redirect_to workout_path(params[:workout_id])
-    end
+    redirect_to workout_path(score_params[:workout_id])
   end
 
   def edit #Edit from profile#show slash score#index view

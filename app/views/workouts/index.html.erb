@@ -7,16 +7,21 @@
   <% @workouts.each do |workout| %>
     <div class="workout_specs card">
       <h4><%= workout.name%></h4>
-      <!-- <ul> -->
-        <span class='spec'><em><%= workout.description %></em></span>
-        <span class='spec'>Type: <%= workout.intensity %></span>
-      <!-- </ul> -->
+      <span class='spec'><em><%= workout.description %></em></span>
+      <span class='spec'>Type: <%= workout.intensity %></span>
       <%= link_to "Stats & Scores", workout_path(workout.id), class: 'button stats_and_scores'%>
+      <% if current_user.profile.role == 'Coach' %>
+        <%= link_to "Edit This Workout", edit_workout_path(workout), class: 'button edit' %>
+        <%= simple_form_for workout, method: :delete do |f| %>
+          <%= f.submit "Delete This Workout", class: "button", style: "background-color: #c00"%>
+        <% end %>
+      <% end %>
     </div>
   <% end %>
-  <!-- Create a coaches toolbar partial that appears at the bottom of the body or in the footer or at the side(?) if the person logging in is a coach. Move create/delete/edit workout options, view all profiles to that panel -->
-  </div>
+</div>
 
+<% if current_user.profile.role == 'Coach' %>
   <div class="wide">
     <%= link_to "Create a New Workout", new_workout_path, class: 'button new'%>
   </div>
+<% end %>

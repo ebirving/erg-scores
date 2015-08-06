@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="title card">
+    <%= current_user.profile.first_name %> <%= current_user.profile.last_name %>'s Roster
+  </div>
+
+  <% if current_user.profile.role == 'Coach' %>
+    <% @rowers.each do |rower| %>
+      <div class="card">
+        <span class="spec"> User ID: <%= rower.user_id %></span>
+        <span class="spec"> Name: <%= rower.first_name %> <%= rower.last_name %></span>
+        <span class="spec">Club: <%= rower.club %></span>
+        <span class="spec">Program: <%= rower.program %></span>
+        <span class="spec"> Gender: <%= rower.gender %></span>
+        <span class="spec"> Weight Class: <%= rower.weight_class %></span>
+        <span class="spec"> Birthday: <%= rower.birthday.strftime("%B %e, %Y") %></span>
+        <span class="spec"> Age Group: <%= rower.age_group %></span>
+        <%=link_to "See All Scores for this Rower", profile_scores_path(rower.id), class: 'button wide'%>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="card">Sorry, you don't have permission to access this form. If you're registered as a Coach and you're seeing this error, please email contact.eirving@gmail.com! </div>
+  <% end %>
+</div>

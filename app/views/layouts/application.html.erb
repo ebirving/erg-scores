@@ -12,7 +12,11 @@
     	<li><strong><%= link_to "er.go", root_path %></strong></li>
     <% if user_signed_in? && current_user.profile != nil %>
       <li><%= link_to "Workouts", workouts_path %></li>
-      <li><%= link_to "Dashboard", profile_scores_path(current_user.profile.id) %></li>
+      <% if current_user.profile.role == 'Rower' %>
+        <li><%= link_to "Dashboard", profile_scores_path(current_user.profile.id) %></li>
+      <% elsif current_user.profile.role == 'Coach' %>
+        <li><%= link_to "Roster", profiles_path %></li>
+      <% end %>
       <li><%= link_to "Profile Settings", edit_profile_path(current_user.profile.id) %></li>
       <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
     <% else %>

@@ -3,30 +3,53 @@
   <div class='title card'>
   <%= @workout.name %><br><%= @workout.description %><br><%= @workout.intensity %></div>
 
-  <% @profiles.each do |profile| %>
-    <div class="score_summary card">
+  <% @womens_profiles.each do |profile| %>
+    <% if profile.scores.size < 0 %>
+      <div class="score_summary card">
       <% profile.scores.each do |score|%>
         <% if score.workout_id == @workout.id %>
-        <span class="spec">Interval: <%= score.interval_number %></span>
-        <span class="spec">Time: <%= score.minutes %>:<%= score.seconds %></span>
-        <span class="spec">Distance: <%= score.distance %>m</span>
-        <span class="spec">500m Split: <%= score.split %>/500m</span>
-        <span class="spec">SPM: <%= score.spm %></span>
-        <span class="spec"><%= score.updated_at.strftime("%D, %l:%M%P") %></span>
+          <span class="spec">Interval: <%= score.interval_number %></span>
+          <span class="spec">Time: <%= score.minutes %>:<%= score.seconds %></span>
+          <span class="spec">Distance: <%= score.distance %>m</span>
+          <span class="spec">500m Split: <%= score.split %>/500m</span>
+          <span class="spec">SPM: <%= score.spm %></span>
+          <span class="spec"><%= score.updated_at.strftime("%D, %l:%M%P") %></span>
         <% end %>
       <% end %>
-    </div>
+      </div>
+    <% end %>
   <% end %>
 
+  <% @mens_profiles.each do |profile| %>
+    <% if profile.scores.size < 0 %>
+      <div class="score_summary card">
+      <% profile.scores.each do |score|%>
+        <% if score.workout_id == @workout.id %>
+          <span class="spec">Interval: <%= score.interval_number %></span>
+          <span class="spec">Time: <%= score.minutes %>:<%= score.seconds %></span>
+          <span class="spec">Distance: <%= score.distance %>m</span>
+          <span class="spec">500m Split: <%= score.split %>/500m</span>
+          <span class="spec">SPM: <%= score.spm %></span>
+          <span class="spec"><%= score.updated_at.strftime("%D, %l:%M%P") %></span>
+        <% end %>
+      <% end %>
+      </div>
+    <% end %>
+  <% end %>
+
+<% if current_user.profile.role == 'Rower' %>
   <div class='wide'>
     <%= link_to "Submit A Score For This Workout", new_workout_score_path(@workout.id), class: 'button new' %>
   </div>
+<% end %>
 </div>
 
 <div class='wide'>
-<!-- Render coaches toolbar? -->
-  <%= link_to "Edit This Workout", edit_workout_path, class: 'button edit' %>
-  <%= simple_form_for @workout, method: :delete do |f| %>
-    <%= f.submit "Delete This Workout", class: "button", style: "background-color: #c00"%>
-  <% end %>
+<%= link_to "Back to All Workouts", workouts_path, class: 'button' %>
+<% if current_user.profile.role == 'Coach' %>
+    <%= link_to "Edit This Workout", edit_workout_path, class: 'button edit' %>
+    <%= simple_form_for @workout, method: :delete do |f| %>
+      <%= f.submit "Delete This Workout", class: "button", style: "background-color: #c00"%>
+    <% end %>
+<% end %>
 </div>

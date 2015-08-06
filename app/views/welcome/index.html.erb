@@ -3,20 +3,34 @@
   <div class="item">
     <figure class="effect-sarah">
       <%= image_tag 'womens_four.jpg' %>
+      <% if current_user.profile.role == 'Rower' %>
       <figcaption>
         <h2>Submit a <span>New Score</span></h2>
         <%= link_to "View More", new_profile_score_path(current_user.profile.id) %>
       </figcaption>
+      <% elsif current_user.profile.role == 'Coach' %>
+      <figcaption>
+        <h2>Create a <span>New Workout</span></h2>
+        <%= link_to "View More", new_workout_path %>
+      </figcaption>
+      <% end %>
     </figure>
   </div>
 
   <div class="item">
     <figure class="effect-sarah">
       <%= image_tag 'dawn_row.jpg' %>
+      <% if current_user.profile.role == 'Rower' %>
       <figcaption>
         <h2>View Your <span>Dashboard</span></h2>
         <%= link_to "View More", profile_scores_path(current_user.profile.id) %>
       </figcaption>
+      <% elsif current_user.profile.role == 'Coach' %>
+        <figcaption>
+          <h2>Manage Your <span>Roster</span></h2>
+          <%= link_to "View More", profiles_path %>
+        </figcaption>
+      <% end %>
     </figure>
   </div>
 
@@ -24,7 +38,7 @@
     <figure class="effect-sarah">
       <%= image_tag 'juniors.jpg' %>
       <figcaption>
-        <h2>Browse <span>Workouts</span></h2>
+        <h2>Browse All <span>Workouts</span></h2>
         <%= link_to "View More", workouts_path %>
       </figcaption>
     </figure>

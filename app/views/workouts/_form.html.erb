@@ -1,10 +1,14 @@
-<%= simple_form_for @workout do |f| %>
-  <div class="card">
-    <%= f.input :name, label: "Workout Name:" %>
-    <%= f.input :description, label: "Description:" %>
-    <%= f.input :intensity, label: "Type" collection: @workout_types, as: :select %>
-  </div>
-  <div class="wide">
-    <%= f.button :submit, class: 'button' %>
-  </div>
+<% if current_user.profile.role == 'Coach' %>
+  <%= simple_form_for @workout do |f| %>
+    <div class="card">
+      <%= f.input :name, label: "Workout Name:" %>
+      <%= f.input :description, label: "Description:" %>
+      <%= f.input :intensity, label: "Type", collection: @workout_types, as: :select %>
+    </div>
+    <div class="wide">
+      <%= f.button :submit, class: 'button' %>
+    </div>
+  <% end %>
+<% else %>
+  <div class="card">Sorry, you don't have permission to access this form. If you're registered as a Coach and you're seeing this error, please email contact.eirving@gmail.com! </div>
 <% end %>

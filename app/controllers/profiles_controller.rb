@@ -1,7 +1,8 @@
 class ProfilesController < ApplicationController
-  # def index -- COACHES ONLY
-  #   # GET /profiles
-  # end
+  def index
+    # GET /profiles
+    @rowers = Profile.where(role: "Rower")
+  end
 
   def show #View my profile
     # GET /profiles/:id
@@ -35,13 +36,13 @@ class ProfilesController < ApplicationController
     @profile.update(profile_params)
     redirect_to profile_path(@profile)
   end
-
-  def destroy #Delete profile
-    # DELETE /profiles/:id
-    @profile = Profile.find(params[:id])
-    @profile.destroy
-    redirect_to root_path
-  end
+  #
+  # def destroy #Delete profile
+  #   # DELETE /profiles/:id
+  #   @profile = Profile.find(params[:id])
+  #   @profile.destroy
+  #   redirect_to root_path
+  # end
 
   private
   def profile_params

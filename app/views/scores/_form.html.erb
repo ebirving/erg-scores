@@ -1,16 +1,22 @@
 <%= simple_form_for [@profile || @workout, @score] do |f| %>
-  <div class="card">
-    <%= f.input :profile_id, as: :hidden, input_html: {value: current_user.profile.id}%>
-    <%= f.input :workout_id, as: :hidden, input_html: {value: @workout.id}%>
-    <%= f.input :interval_number %>
-    <%= f.input :minutes %>
-    <%= f.input :seconds %>
-    <%= f.input :distance, label: 'Distance in Meters' %>
-    <%= f.input :split %>
-    <%= f.input :spm %>
-  </div>
-  <div class="wide">
-    <%= f.button :submit, class: 'button' %>
-  </div>
+    <div class="card">
+      <% if current_user.profile.role == 'Rower' %>
+        <%= f.input :profile_id, as: :hidden, input_html: {value: current_user.profile.id}%>
+      <% end %>
+      <% if params.include? (:workout_id) %>
+          <%= f.input :workout_id, as: :hidden, input_html: {value: @workout.id}%>
+      <% else %>
+          <%= f.input :workout_id,label: "Workout", collection: @workouts, as: :select %>
+      <% end %>
+      <%= f.input :interval_number %>
+      <%= f.input :minutes %>
+      <%= f.input :seconds %>
+      <%= f.input :distance, label: 'Distance in Meters' %>
+      <%= f.input :split %>
+      <%= f.input :spm %>
+    </div>
+    <div class="wide">
+      <%= f.button :submit, class: 'button' %>
+    </div>
 <% end %>
 <!-- ADD AUTHENTICATION TO THIS BEYOTCH AND AUTOMATICALLY POPULATE WORKOUT AND profile-->

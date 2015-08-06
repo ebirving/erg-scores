@@ -54,6 +54,7 @@ body {
 	background-color: #39c;
 	border-radius: 7px;
   margin: .5em auto;
+  max-width: 50%;
 }
 
 input.button, button.button {
@@ -88,17 +89,10 @@ input.button, button.button {
 
 .new {
   background-color: #42b078;
-  margin: 0 auto;
-  max-width: 50%;
 }
 
 .delete {
   background-color: #c00;
-  max-width: 50%;
-}
-
-.edit {
-  max-width: 50%;
 }
 
 .wide {

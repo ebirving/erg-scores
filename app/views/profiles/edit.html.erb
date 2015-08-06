@@ -8,9 +8,4 @@
   <% end %>
 </div>
 
-<%= link_to 'Change Email/Password', edit_user_registration_path, class: 'button' %>
-<div>
-    <%= simple_form_for @profile, method: :delete do |f| %>
-      <%= f.submit "Delete Profile", class: 'button', style: 'background-color: #c00'%>
-    <% end %>
-</div>
+<%= link_to 'Change Email/Password or Delete Account', edit_user_registration_path, class: 'button' %>
