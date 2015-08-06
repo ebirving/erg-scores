@@ -1,6 +1,6 @@
-class AddClubAndProgramToRowers < ActiveRecord::Migration
+class AddClubAndProgramToprofiles < ActiveRecord::Migration
   def change
-    add_column :rowers, :club, :string
-    add_column :rowers, :program, :string
+    add_column :profiles, :club, :string
+    add_column :profiles, :program, :string
   end
 end

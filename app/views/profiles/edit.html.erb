@@ -1,5 +1,5 @@
 <div class="container">
-<%= simple_form_for @rower do |f| %>
+<%= simple_form_for @profile do |f| %>
   <div class="card">
   <%= f.input :first_name %>
   <%= f.input :last_name %>
@@ -14,7 +14,7 @@
   </div>
 </div>
 <div>
-    <%= simple_form_for @rower, method: :delete do |f| %>
+    <%= simple_form_for @profile, method: :delete do |f| %>
       <%= f.submit "Delete Profile", class: 'button', style: 'background-color: #c00'%>
     <% end %>
 </div>

@@ -1,6 +1,6 @@
-class CreateRowers < ActiveRecord::Migration
+class Createprofiles < ActiveRecord::Migration
   def change
-    create_table :rowers do |t|
+    create_table :profiles do |t|
       t.string :email
       t.string :password_digest
       t.string :name

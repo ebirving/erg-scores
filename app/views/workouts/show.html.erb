@@ -3,9 +3,9 @@
   <div class='title card'>
   <%= @workout.name %><br><%= @workout.description %><br><%= @workout.intensity %><br><%= @workout.training_band %></div>
 
-  <% @rowers.each do |rower| %>
+  <% @profiles.each do |profile| %>
     <div class="score_summary card">
-      <% rower.scores.each do |score|%>
+      <% profile.scores.each do |score|%>
         <% if score.workout_id == @workout.id %>
         <span class="spec">Interval: <%= score.interval_number %></span>
         <span class="spec">Time: <%= score.minutes %>:<%= score.seconds %></span>

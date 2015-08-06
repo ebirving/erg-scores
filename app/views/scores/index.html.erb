@@ -2,7 +2,7 @@
   <!-- Partial here? Latest benchmark, charted -->
   <!-- Filtering options or search here? -->
   <div class="title card">
-    <%= @rower.first_name %> <%= @rower.last_name %>'s Dashboard
+    <%= @profile.first_name %> <%= @profile.last_name %>'s Dashboard
   </div>
 
 <% @scores.each do |score| %>
@@ -20,4 +20,4 @@
 <% end %>
 
 
-<div class="wide"><%= link_to "Submit New Score", new_rower_score_path(@rower), class: 'button new' %></div>
+<div class="wide"><%= link_to "Submit New Score", new_profile_score_path(@profile), class: 'button new' %></div>

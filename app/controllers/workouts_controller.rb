@@ -10,7 +10,7 @@ class WorkoutsController < ApplicationController
     # GET /workouts/:id
     @workout = Workout.find(params[:id])
     @scores = Score.where(workout_id: @workout.id)
-    @rowers = Rower.all
+    @profiles = Profile.all
     @score = Score.new
   end
 

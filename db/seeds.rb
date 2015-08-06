@@ -10,5 +10,5 @@ Workout.create(name: 'Long piece', training_band: 'UT2', description:'2 x 25 min
 Workout.create(name: 'Aerobic hell', training_band: 'UT1', description:'3 x 10 minutes', intensity: 'training')
 Workout.create(name: '2k', training_band: 'AT', description:'2k piece', intensity: 'benchmark')
 
-Rower.create(name: 'Erica')
-Rower.create(name: 'Idgie')
+profile.create(name: 'Erica')
+profile.create(name: 'Idgie')

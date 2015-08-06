@@ -1,5 +1,5 @@
-class AddRowerIdToWorkout < ActiveRecord::Migration
+class AddprofileIdToWorkout < ActiveRecord::Migration
   def change
-    add_column :workouts, :rower_id, :integer
+    add_column :workouts, :profile_id, :integer
   end
 end

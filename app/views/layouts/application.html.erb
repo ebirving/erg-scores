@@ -11,8 +11,8 @@
     <ul id="nav">
     	<li><strong><%= link_to "er.go", root_path %></strong></li>
     	<li><%= link_to "Workouts", workouts_path %></li>
-    	<li><%= link_to "Dashboard", rower_scores_path(1) %></li>
-    	<li><%= link_to "Profile Settings", edit_rower_path(1) %></li>
+    	<li><%= link_to "Dashboard", profile_scores_path(1) %></li>
+    	<li><%= link_to "Profile Settings", edit_profile_path(1) %></li>
 
     <% if user_signed_in? %>
       <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>

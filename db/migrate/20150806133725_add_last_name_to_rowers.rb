@@ -1,6 +1,6 @@
-class AddLastNameToRowers < ActiveRecord::Migration
+class AddLastNameToprofiles < ActiveRecord::Migration
   def change
-    add_column :rowers, :last_name, :string
-    rename_column :rowers, :name, :first_name
+    add_column :profiles, :last_name, :string
+    rename_column :profiles, :name, :first_name
   end
 end
