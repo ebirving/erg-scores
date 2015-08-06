@@ -1,27 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ErgScores</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>ErgScores</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<ul id="nav">
-	<li><strong><%= link_to "er.go", root_path %></strong></li>
-	<li><%= link_to "Workouts", workouts_path %></li>
-	<li><%= link_to "Dashboard", rower_scores_path(1) %></li>
-	<li><%= link_to "Profile Settings", edit_rower_path(1) %></li>
-  <li><%= link_to "Sign in", root_path %></li>
-  <li><%= link_to "Sign up", root_path %></li>
-  <li><%= link_to "Sign out", root_path %></li>
-</ul>
-<div class="spacer">
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-</div>
-  <%= yield %>
-  <!-- Coaches toolbar? -->
-</body>
+    <ul id="nav">
+    	<li><strong><%= link_to "er.go", root_path %></strong></li>
+    	<li><%= link_to "Workouts", workouts_path %></li>
+    	<li><%= link_to "Dashboard", rower_scores_path(1) %></li>
+    	<li><%= link_to "Profile Settings", edit_rower_path(1) %></li>
+      <li><%= link_to "Sign in", root_path %></li>
+      <li><%= link_to "Sign up", root_path %></li>
+      <li><%= link_to "Sign out", root_path %></li>
+    </ul>
+
+    <div class="spacer">
+    </div>
+
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <%= yield %>
+  </body>
 </html>
