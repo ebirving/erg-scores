@@ -7,7 +7,7 @@
   <%= f.input :program %>
   <%= f.input :gender, collection: @genders, as: :select %>
   <%= f.input :weight_class, collection: @weight_classes, as: :select %>
-  <%= f.input :birthday, as: :date, start_year: Date.today.year - 90, order: [:month, :day, :year] %>
+  <%= f.input :birthday, as: :date, start_year: Date.today.year - 90, order: [:month, :day, :year], prompt: [month: "Month", day: "Day", year: "Year"] %>
   <%= f.input :age_group, collection: @age_groups, as: :select %>
   <%= f.button :submit, class: 'button', value: 'Update Profile' %>
 <% end %>
