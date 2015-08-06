@@ -1,0 +1,10 @@
+<%= simple_form_for @profile do |f| %>
+  <div class="card">
+  <%= f.input :role, as: :hidden, input_html: {value: "Coach"}%>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :club %>
+  <%= f.input :program %>
+  <%= f.button :submit, class: 'button'%>
+  </div>
+<% end %>
