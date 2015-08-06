@@ -10,7 +10,6 @@ class CreateProfiles < ActiveRecord::Migration
       t.string  :club
       t.string  :program
       t.string  :role
-      t.references :user, index: true, foreign_key: true
     end
   end
 end
