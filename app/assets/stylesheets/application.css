@@ -41,6 +41,7 @@ body {
   color: #444;
   padding: 0 10px;
   background-color: #21252B;
+
 }
 
 .button {
@@ -62,11 +63,21 @@ input.button, button.button {
 }
 
 .container {
-  margin: 3em auto;
-  max-width: 640px;
-  padding: 1em;
   display: flex;
   flex-wrap: wrap;
+  width: inherit;
+}
+
+.section_title {
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+.main {
+  margin: 3em auto;
+  max-width: 740px;
+  padding: 1em;
   background-color: white;
 }
 

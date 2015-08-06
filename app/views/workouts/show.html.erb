@@ -1,8 +1,8 @@
+<h3 class="section_title">
+  <%= @workout.name %><br><%= @workout.description %><br><%= @workout.intensity %>
+</h3>
+
 <div class="container">
-
-  <div class='title card'>
-  <%= @workout.name %><br><%= @workout.description %><br><%= @workout.intensity %></div>
-
   <% @womens_profiles.each do |profile| %>
     <% if profile.scores.size < 0 %>
       <div class="score_summary card">

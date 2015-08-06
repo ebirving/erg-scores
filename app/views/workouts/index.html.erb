@@ -1,9 +1,11 @@
+<h3 class="section_title">
+  All Workouts
+</h3>
+
 <div class="container">
   <!-- Partial here? Latest benchmark, charted -->
   <!-- Filtering options or search here? -->
-  <div class="title card">
-    All Workouts
-  </div>
+
   <% @workouts.each do |workout| %>
     <div class="workout_specs card">
       <h4><%= workout.name%></h4>

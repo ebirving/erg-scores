@@ -1,9 +1,10 @@
+<h3 class="section_title">
+  <%= @profile.first_name %> <%= @profile.last_name %>'s Dashboard
+</h3>
 <div class="container">
   <!-- Partial here? Latest benchmark, charted -->
   <!-- Filtering options or search here? -->
-  <div class="title card">
-    <%= @profile.first_name %> <%= @profile.last_name %>'s Dashboard
-  </div>
+
 
 <% @scores.each do |score| %>
   <div class="card">

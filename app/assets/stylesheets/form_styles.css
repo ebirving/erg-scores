@@ -1,6 +1,7 @@
 /* ----- SimpleForm Styles ----- */
 .simple_form {
-  min-width: 50%
+  width: 100%;
+
 }
 .simple_form div.input {
   margin: 1em;
@@ -25,14 +26,6 @@ textarea {
 
 .simple_form label {
   display: block;
-}
-
-div.boolean label, label.collection_radio_buttons {
-
-}
-
-label.collection_radio_buttons {
-
 }
 
 .field_with_errors {

@@ -1,8 +1,8 @@
-<div class="container">
-  <div class="title card">
-    <%= current_user.profile.first_name %> <%= current_user.profile.last_name %>'s Roster
-  </div>
+<h3 class="section_title">
+  <%= current_user.profile.first_name %> <%= current_user.profile.last_name %>'s Roster
+</h3>
 
+<div class="container">
   <% if current_user.profile.role == 'Coach' %>
     <% @rowers.each do |rower| %>
       <div class="card">
