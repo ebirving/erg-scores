@@ -1,13 +1,13 @@
 <%= simple_form_for [@profile || @workout, @score] do |f| %>
   <div class="card">
+    <%= f.input :profile_id, as: :hidden, input_html: {value: current_user.profile.id}%>
+    <%= f.input :workout_id, as: :hidden, input_html: {value: @workout.id}%>
     <%= f.input :interval_number %>
     <%= f.input :minutes %>
     <%= f.input :seconds %>
     <%= f.input :distance, label: 'Distance in Meters' %>
     <%= f.input :split %>
     <%= f.input :spm %>
-    <%= f.input :profile_id %>
-    <%= f.input :workout_id %>
   </div>
   <div class="wide">
     <%= f.button :submit, class: 'button' %>
