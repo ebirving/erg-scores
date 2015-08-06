@@ -15,7 +15,7 @@
       <% if current_user.profile.role == 'Coach' %>
         <%= link_to "Edit This Workout", edit_workout_path(workout), class: 'button edit' %>
         <%= simple_form_for workout, method: :delete do |f| %>
-          <%= f.submit "Delete This Workout", class: "button", style: "background-color: #c00"%>
+          <%= f.submit "Delete Workout", class: "button", style: "background-color: #c00"%>
         <% end %>
       <% end %>
     </div>

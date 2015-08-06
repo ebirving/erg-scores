@@ -9,7 +9,7 @@
 <% @scores.each do |score| %>
   <div class="card">
     <span class="spec">Date: <%= score.created_at.strftime("%B %e, %Y") %></span>
-    <span class="spec">Workout: <%= score.workout_id %></span>
+    <span class="spec">Workout: <%= score.workout.name %></span>
     <span class="spec">Interval: <%= score.interval_number %></span>
     <span class="spec">Time: <%= score.minutes %>:<%= score.seconds %></span>
     <span class="spec">Distance: <%= score.distance %>m</span>
