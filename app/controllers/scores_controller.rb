@@ -9,15 +9,11 @@ class ScoresController < ApplicationController
     # GET /profiles/:profile_id/scores/new
     # /workouts/:workout_id/scores/new
     @profile = current_user.profile
-
     if params.include? (:workout_id)
       @workout = Workout.find(params[:workout_id])
     end
-
     @score = Score.new
-
     @workouts = Workout.all
-
   end
 
   def create

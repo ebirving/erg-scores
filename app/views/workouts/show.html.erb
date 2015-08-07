@@ -5,6 +5,7 @@
 <div class="container">
   <% @scores.each do |score| %>
     <div class="card">
+      <strong><%=score.profile.gender == 'Female' ? 'W' : 'M'%></strong>
       <span class="spec">Interval: <%= score.interval_number %></span>
       <span class="spec">Time: <%= score.minutes %>:<%= score.seconds %></span>
       <span class="spec">Distance: <%= score.distance %>m</span>
