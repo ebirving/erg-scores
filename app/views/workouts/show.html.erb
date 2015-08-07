@@ -3,40 +3,16 @@
 </h3>
 
 <div class="container">
-  <% @womens_profiles.each do |profile| %>
-    <% if profile.scores.size < 0 %>
-      <div class="score_summary card">
-      <% profile.scores.each do |score|%>
-        <% if score.workout_id == @workout.id %>
-          <span class="spec">Interval: <%= score.interval_number %></span>
-          <span class="spec">Time: <%= score.minutes %>:<%= score.seconds %></span>
-          <span class="spec">Distance: <%= score.distance %>m</span>
-          <span class="spec">500m Split: <%= score.split %>/500m</span>
-          <span class="spec">SPM: <%= score.spm %></span>
-          <span class="spec"><%= score.updated_at.strftime("%D, %l:%M%P") %></span>
-        <% end %>
-      <% end %>
-      </div>
-    <% end %>
+  <% @scores.each do |score| %>
+    <div class="card">
+      <span class="spec">Interval: <%= score.interval_number %></span>
+      <span class="spec">Time: <%= score.minutes %>:<%= score.seconds %></span>
+      <span class="spec">Distance: <%= score.distance %>m</span>
+      <span class="spec">500m Split: <%= score.split %> /500m</span>
+      <span class="spec">SPM: <%= score.spm %></span>
+      <span class="spec"><%= score.updated_at.strftime("%D, %l:%M%P") %>
+    </div>
   <% end %>
-
-  <% @mens_profiles.each do |profile| %>
-    <% if profile.scores.size < 0 %>
-      <div class="score_summary card">
-      <% profile.scores.each do |score|%>
-        <% if score.workout_id == @workout.id %>
-          <span class="spec">Interval: <%= score.interval_number %></span>
-          <span class="spec">Time: <%= score.minutes %>:<%= score.seconds %></span>
-          <span class="spec">Distance: <%= score.distance %>m</span>
-          <span class="spec">500m Split: <%= score.split %>/500m</span>
-          <span class="spec">SPM: <%= score.spm %></span>
-          <span class="spec"><%= score.updated_at.strftime("%D, %l:%M%P") %></span>
-        <% end %>
-      <% end %>
-      </div>
-    <% end %>
-  <% end %>
-
 <% if current_user.profile.role == 'Rower' %>
   <div class='wide'>
     <%= link_to "Submit A Score For This Workout", new_workout_score_path(@workout.id), class: 'button new' %>

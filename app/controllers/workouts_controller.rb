@@ -10,9 +10,6 @@ class WorkoutsController < ApplicationController
     # GET /workouts/:id
     @workout = Workout.find(params[:id])
     @scores = Score.where(workout_id: @workout.id)
-    @mens_profiles = Profile.where(gender: 'Male')
-    @womens_profiles = Profile.where(gender: 'Female')
-    @profiles = Profile.all
   end
 
   def new #Eventually coaches only
