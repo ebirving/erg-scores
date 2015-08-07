@@ -26,6 +26,7 @@ class ScoresController < ApplicationController
   def edit #Edit from profile#show slash score#index view
     # GET /scores/:id/edit
     @score = Score.find(params[:id])
+    @workouts = Workout.all
   end
 
   def update
