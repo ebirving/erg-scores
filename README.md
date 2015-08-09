@@ -7,13 +7,13 @@ er.go is a fairly straightforward Rails app with a PostgreSQL database for Activ
 ##Login Instructions
 The deployed version of er.go includes two sample users, one rower and one coach.
 
-To preview the site with a fully seeded rower dashboard, use:
-  email: rower@example.com
-  password: password
+To preview the site with a fully seeded rower dashboard and rower functionality, use:
+  *email: rower@example.com
+  *password: password
 
-To preview the site with a fully seeded coach dashboard, user:
-  email: coach@example.com
-  password: password
+To preview the site with a fully seeded coach roster and coach functionality, use:
+  *email: coach@example.com
+  *password: password
 
 ## Next Steps
 - Make authorization more sophisticated using CanCan, then expand the list of possible roles to include Club Admin and Program Admin.
