@@ -5,7 +5,6 @@
   <!-- Partial here? Latest benchmark, charted -->
   <!-- Filtering options or search here? -->
 
-
 <% @scores.each do |score| %>
   <div class="card">
     <span class="spec">Date: <%= score.created_at.strftime("%B %e, %Y") %></span>
@@ -19,6 +18,5 @@
     <%=link_to "See All Scores for this Workout", workout_path(score.workout_id), class: 'button wide'%>
   </div>
 <% end %>
-
 
 <div class="wide"><%= link_to "Submit New Score", new_profile_score_path(@profile), class: 'button new' %></div>
