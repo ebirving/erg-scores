@@ -5,15 +5,15 @@
 er.go is a fairly straightforward Rails app with a PostgreSQL database for Active Record. User authentication is handled through [Devise](https://github.com/plataformatec/devise). All forms are customized using [Simple Form](https://github.com/plataformatec/simple_form). The CSS is hand-rolled, with special thanks to Codrops [effects tutorials](http://tympanus.net/codrops/category/tutorials) and and CSS Tricks' [Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/guide).
 
 ##Login Instructions
-The deployed version of er.go includes two sample users, one rower and one coach.
+The deployed version of er.go includes two sample users...
 
-To preview the site with a fully seeded rower dashboard, use:
-  email: rower@example.com
-  password: password
+To preview the site with a fully seeded rower dashboard and rower functionality, use:
+- email: rower@example.com
+- password: password
 
-To preview the site with a fully seeded coach dashboard, user:
-  email: coach@example.com
-  password: password
+To preview the site with a fully seeded coach roster and coach functionality, use:
+- email: coach@example.com
+- password: password
 
 ## Next Steps
 - Make authorization more sophisticated using CanCan, then expand the list of possible roles to include Club Admin and Program Admin.
