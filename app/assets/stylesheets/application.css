@@ -18,6 +18,18 @@
    box-sizing: border-box;
  }
 
+ body {
+   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   font-style: normal;
+   font-weight: 300;
+   line-height: 1.6;
+   font-size: 18px;
+   color: #444;
+   padding: 0 10px;
+   background-color: #21252B;
+
+ }
+
 h1 {
   font-weight: bold;
 }
@@ -26,22 +38,6 @@ h2,
 h3 {
   line-height: 1.2;
   font-weight: bolder;
-}
-
-.spacer {
-  height: 2em;
-}
-
-body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 1.6;
-  font-size: 18px;
-  color: #444;
-  padding: 0 10px;
-  background-color: #21252B;
-
 }
 
 .button {
@@ -59,26 +55,7 @@ body {
 }
 
 input.button, button.button {
-	border: 0px none;
-}
-
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  width: inherit;
-}
-
-.section_title {
-  font-variant: small-caps;
-  font-weight: bold;
-  font-size: 24px;
-  text-align: center;
-}
-.main {
-  margin: 3em auto;
-  max-width: 740px;
-  padding: 1em;
-  background-color: white;
+	border: 0 none;
 }
 
 .card {
@@ -88,43 +65,37 @@ input.button, button.button {
   background-color: white;
 }
 
-.title {
-  font-variant: small-caps;
-  font-weight: bold;
-  font-size: 24px;
-  flex-shrink: 1;
-  box-shadow: none;
-  border: none;
-  text-align: center;
-}
-
-.new {
-  background-color: #42b078;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: inherit;
 }
 
 .delete {
   background-color: #c00;
 }
 
-.wide {
-  width: 100%
+.main {
+  margin: 3em auto;
+  max-width: 740px;
+  padding: 1em;
+  background-color: white;
 }
 
-#nav li {
-  display: inline;
+.nav li {
 	float: left; }
 
-#nav li a {
+.nav li a {
 	display: block;
 	padding: 8px 15px;
 	text-decoration: none;
   font-weight: lighter;
 	color: white;}
 
-#nav li a:hover {
+.nav li a:hover {
   color: #c00; }
 
-#nav {
+.nav {
 	width: 100%;
 	margin: 0 0 2em 0;
 	padding: 0;
@@ -133,3 +104,39 @@ input.button, button.button {
   position: absolute;
   top: 0;
   left: 0 }
+
+.new {
+  background-color: #42b078;
+}
+
+.section_title {
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+.spacer {
+  height: 2em;
+}
+
+.spec {
+  display: block;
+}
+
+.spec_summary {
+  font-style: italic;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.wide {
+  width: 100%
+}
+
+.workout_specs {
+  flex-grow: 1;
+}
+.workout_specs h4 {
+  margin: 0
+}

@@ -1,7 +1,6 @@
 <div class="container" id="welcome">
 
-  <div class="item">
-    <figure class="effect-sarah">
+    <figure class="effect-welcome">
       <%= image_tag 'womens_four.jpg' %>
       <% if current_user.profile.role == 'Rower' %>
       <figcaption>
@@ -15,10 +14,8 @@
       </figcaption>
       <% end %>
     </figure>
-  </div>
 
-  <div class="item">
-    <figure class="effect-sarah">
+    <figure class="effect-welcome">
       <%= image_tag 'dawn_row.jpg' %>
       <% if current_user.profile.role == 'Rower' %>
       <figcaption>
@@ -32,16 +29,14 @@
         </figcaption>
       <% end %>
     </figure>
-  </div>
 
-  <div class="item">
-    <figure class="effect-sarah">
+    <figure class="effect-welcome">
       <%= image_tag 'juniors.jpg' %>
       <figcaption>
         <h2>Browse All <span>Workouts</span></h2>
         <%= link_to "View More", workouts_path %>
       </figcaption>
     </figure>
-  </div>
+
 
 </div>

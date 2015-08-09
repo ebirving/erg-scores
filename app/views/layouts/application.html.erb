@@ -8,7 +8,7 @@
   </head>
   <body>
 
-    <ul id="nav">
+    <ul class="nav">
     	<li><strong><%= link_to "er.go", root_path %></strong></li>
     <% if user_signed_in? && current_user.profile != nil %>
       <li><%= link_to "Workouts", workouts_path %></li>
