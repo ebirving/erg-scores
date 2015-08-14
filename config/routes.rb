@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
+  ## ooh, i like this use of shallow! very cool
   resources :profiles do
     resources :scores, shallow: true
   end

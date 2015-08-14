@@ -13,6 +13,7 @@ class WorkoutsController < ApplicationController
   end
 
   def new #Eventually coaches only
+    # this is interesting, comma separated strings, this doesn't error out?
     # GET /workout/new
     @workout = Workout.new
     @training_bands = 'UT2', 'UT1', 'AT', 'TR', 'AN'
