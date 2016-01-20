@@ -21,6 +21,8 @@ To preview the site with a fully seeded coach roster and coach functionality, us
 - Enable automatic calculation of splits based on time and distance.
 - Enable sorting and filtering of data by various criteria, including gender, weight class, age range, club/team, program, and crew.
 - Incorporate data visualizations using a js library like d3.
-- Combine multiple intervals from the same workout session into a single model/element.
+- Combine multiple intervals from the same workout session into a single model/element and upgrade score calculator functionality.
+- Restructure data model to make use of many-to-many relationships.
+- Build CMS to allow club theming and administration?
 - Further enhance responsive design.
 - See [Trello](https://trello.com/b/XQQBBKRc/week-6-project) for more...
