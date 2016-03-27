@@ -13,6 +13,7 @@ class ProfilesController < ApplicationController
   end
 
   def new
+    # this is a cool way to generate options in your forms
     @profile = Profile.new
     @genders = ['Female', 'Male']
     @weight_classes = ['Open Weight', 'Lightweight']
